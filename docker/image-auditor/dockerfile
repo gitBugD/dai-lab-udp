@@ -1,0 +1,5 @@
+FROM alpine:latest
+RUN apk add --no-cache openjdk21
+WORKDIR /app
+COPY ./app/auditor/target/auditor-app-1.0.jar /app/app.jar
+ENTRYPOINT ["java", "-jar", "/app/app.jar"]
